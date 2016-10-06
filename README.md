@@ -1,0 +1,1 @@
+# ember-coding-test-front
