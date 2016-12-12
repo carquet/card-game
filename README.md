@@ -1,4 +1,4 @@
-# ember-coding-test-front
+# Celtic Card game
 
 ![game page](gamepage.png)
 
