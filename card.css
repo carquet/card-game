@@ -9,28 +9,51 @@ body {
 	height: auto;
 }
 
+img {
+	width: 100%;
+	height: 100%;
+}
 
+.sound {
+	font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:#ffc600;
+}
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 10em;
+	margin-top: 10em;
+}
 
 .card {
 	border: 3px solid black;
 	width:20rem;
 	height: 20rem;
-    margin: 1rem;
+   margin: 1rem;
 	border-radius: 2rem;
 	box-shadow: 0 1rem 4rem pink;
-	position: relative;
-	top: 10rem;
-	left: 30rem;
-	
-	
+
 }
 
-.card img {
+.back {
+	background-image: url(image/fairybackground.jpg);
+	z-index: -1;
+	opacity: 100%;
 	max-width:100%;
 	max-height:100%;
 	border-radius: 2rem;
 	box-sizing: border-box;
-	
+}
+
+.back img {
+	visibility: hidden;
+}
+
+.playing img {
+	visibility: visible;
 }
 
 .footer {

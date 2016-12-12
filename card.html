@@ -10,53 +10,35 @@
 	<title>cards</title>
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-6 col-md-2">
-				<div class="card">
-					<img src="image/fairybackground.jpg">
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-2">
-				<div class="card">
-					<img src="image/castle.png">
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-2">
-				<div class="card">
-					<img src="image/princessknight.png">
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-2">
-				<div class="card">
-					<img src="image/dragon.png">
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-6 col-md-2">
-				<div class="card">
-					<img src="image/sword.png">
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-2">
-				<div class="card">
-					<img src="image/owl.png">
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-2">
-				<div class="card">
-					<img src="image/knight.png">
-				</div>
-			</div>
-			<div class="col-xs-6 col-md-2">
-				<div class="card">
-					<img src="image/crown.png">
-				</div>
-			</div>
-		</div>
-		</div>
+	<div class="cards">
+	    <div data-key="65" class="card back">
+	      <img src="image/castle.png">
+	      <span class="sound">A</span>
+	    </div>
+	    
 
+	    <div data-key="83" class="card back">
+	      <img src="image/castle.png">
+	      <span class="sound">S</span>
+	    </div>
+
+	    <div data-key="68" class="card back">
+	      <img src="image/castle.png">
+	      <span class="sound">D</span>
+	    </div>
+
+	    <div data-key="70" class="card back">
+	      <img src="image/castle.png">
+	      <span class="sound">F</span>
+	    </div>    
+  </div>
+
+  <audio data-key="65" src="http://www.music.mcgill.ca/~gary/307/sounds/triangle.wav"></audio>
+  <audio data-key="83" src="http://www.music.mcgill.ca/~gary/307/sounds/triangle.wav"></audio>
+  <audio data-key="68" src="http://har-bal.com/reference/brass/Trompeteshort.wav"></audio>
+  <audio data-key="70" src="http://har-bal.com/reference/brass/Trompeteshort.wav"></audio>
+  
+  
 
 		<div class="footer">
 			<div class="container">
@@ -64,5 +46,17 @@
 			</div>
 		</div>
 	</div>
+
+<script>
+	window.addEventListener("keydown", function(e){
+		const sound = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+		const card = document.querySelector(`div[data-key="${e.keyCode}"]`);
+		if (!sound)return;
+		sound.play();
+		card.classList.add('playing')
+		
+	})
+	
+</script>
 </body>
 </html>
